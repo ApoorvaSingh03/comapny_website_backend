@@ -4,15 +4,13 @@ import bookDemoRoutes from './routes/bookDemoRoutes.js';
 
 const app = express();
 
-const PORT = 8080 || process.env.PORT;
-
 app.use(express.json());
 app.use(cors());
 
-app.use('/api/bookDemoForm',bookDemoRoutes)
+app.use('/api/bookDemoForm', bookDemoRoutes);
 
 app.get('/', (req, res) => {
-    res.send("Hello");
-})
+  res.send("Hello from backend!");
+});
 
-app.listen(PORT, console.log(`Server running on port http://localhost:${PORT}`));
+export default app;
